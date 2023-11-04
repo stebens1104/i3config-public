@@ -59,6 +59,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+p exec --no-startup-id $HOME/.local/bin/powermenu.sh
+bindsym $mod+Shift+p exec --no-startup-id google-chrome --app="https://app.chime.aws/"
+bindsym $mod+Shift+i exec --no-startup-id google-chrome --app="https://ballard.amazon.com/owa"
 bindsym $mod+x exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -147,9 +149,13 @@ bindsym $mod+0 workspace number $ws10
 assign [class="Firefox"] $ws1
 assign [class="kitty"] $ws2
 assign [class="Slack"] $ws3
+#assign [instance="ballard.amazon.com/owa"] $ws6
+#assign [instance="app.chime.aws"] $ws3
 assign [class="code"] $ws4
+#assign [class="org.gnome.Nautilus"] $ws5
+#assign [class="workspacesclient"] $ws7
 
-
+# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -201,13 +207,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status --config  $HOME/.config/i3/i3status.conf
-        #status_command i3blocks -c $HOME/.config/i3/i3blocks/i3blocks.conf
-        #tray_output none
+        tray_output none
         font pango:IosevkaTermNerdFont 14
         separator_symbol "  "
         position top
 	strip_workspace_numbers yes
-	tray_padding 4
+	tray_padding 0
 	colors {
             separator  #1f222d
             background #4c566a
@@ -235,10 +240,12 @@ bar {
 # Startup Programs
 exec_always picom --vsync &
 exec_always /usr/bin/nitrogen --restore &
+#exec_always systemd-run --user /usr/lib/amazon/amazon-core-env/bin/python3 /usr/local/bin/acme_ui &
 exec /usr/bin/volumeicon &
 exec_always /usr/bin/lxpolkit &
 exec blueman-applet &
-exec xfce4-power-manager
+exec xfce4-power-manager &
+exec_always dunst -c $HOME/.config/dunst/dunstrc
 # Gaps
 gaps inner 10
 gaps outer 5
