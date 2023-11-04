@@ -1,0 +1,20 @@
+configuration {
+	display-drun: "Applications";
+	drun-display-format: "{name}";
+	font: "JetBrainsMono Nerd Font Medium 10";
+	show-icons: true;
+	icon-theme: "Papirus-Dark";
+	modi: "window,run,drun";
+}
+
+@theme "nord.rasi"
+
+listview {
+	lines: 6;
+	columns: 2;
+}
+
+window {
+	width: 30%;
+}
+
