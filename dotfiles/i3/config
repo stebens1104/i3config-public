@@ -59,8 +59,6 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+p exec --no-startup-id $HOME/.local/bin/powermenu.sh
-bindsym $mod+Shift+p exec --no-startup-id google-chrome --app="https://app.chime.aws/"
-bindsym $mod+Shift+i exec --no-startup-id google-chrome --app="https://ballard.amazon.com/owa"
 bindsym $mod+x exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -149,13 +147,9 @@ bindsym $mod+0 workspace number $ws10
 assign [class="Firefox"] $ws1
 assign [class="kitty"] $ws2
 assign [class="Slack"] $ws3
-#assign [instance="ballard.amazon.com/owa"] $ws6
-#assign [instance="app.chime.aws"] $ws3
 assign [class="code"] $ws4
-#assign [class="org.gnome.Nautilus"] $ws5
-#assign [class="workspacesclient"] $ws7
 
-# move focused container to workspace
+
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -241,7 +235,6 @@ bar {
 # Startup Programs
 exec_always picom --vsync &
 exec_always /usr/bin/nitrogen --restore &
-#exec_always systemd-run --user /usr/lib/amazon/amazon-core-env/bin/python3 /usr/local/bin/acme_ui &
 exec /usr/bin/volumeicon &
 exec_always /usr/bin/lxpolkit &
 exec blueman-applet &
