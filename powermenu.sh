@@ -6,7 +6,7 @@ case "$chosen" in
 	"⏻ Power Off") /usr/sbin/poweroff ;;
 	" Restart") /usr/sbin/reboot ;;
 	"󰍃 LogOut") i3-msg exit ;;
-	" Lock") i3lock --image $HOME/Pictures/wallpapers/lock.png;;
+	" Lock") i3lock-fancy ;;
         *) exit 1 ;;
 esac	
 
