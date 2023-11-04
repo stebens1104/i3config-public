@@ -49,6 +49,7 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 #tiling_drag modifier titlebar
 
+
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec xfce4-terminal
@@ -207,6 +208,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status --config  $HOME/.config/i3/i3status.conf
+        i3bar_command i3bar --transparency
         tray_output none
         font pango:IosevkaTermNerdFont 14
         separator_symbol "  "
@@ -215,15 +217,15 @@ bar {
 	tray_padding 0
 	colors {
             separator  #1f222d
-            background #4c566a
+            background #4c566a00
             statusline #5e81ac
 
-            #                   border   background   text
-            focused_workspace   #4c566a  #4c566a      #d8dee9
-            active_workspace    #4c566a  #4c566a      #4c566a
-            inactive_workspace  #4c566a  #4c566a      #3b4242
-            urgent_workspace    #4c566a  #1f222d      #ee829f
-            binding_mode        #4c566a  #81a1c1      #2e3440
+            #                   border          background      text
+            focused_workspace   #4c566a00       #4c566a00       #d8dee9
+            active_workspace    #4c566a00       #4c566a00       #4c566a
+            inactive_workspace  #4c566a00       #4c566a00       #3b4242
+            urgent_workspace    #4c566a00       #1f222d         #ee829f
+            binding_mode        #4c566a00       #81a1c1         #2e3440
     }	
 }
 
