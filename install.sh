@@ -33,7 +33,7 @@ rm -f packages.microsoft.gpg
 sudo apt update && sudo apt install -y code
 
 # Install ZSH and plugins 
-sudo apt install -y zsh
+cd ../
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mkdir git && cd git
 git clone https://github.com/zsh-users/zsh-autosuggestions
