@@ -31,7 +31,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packag
 rm -f packages.microsoft.gpg
 sudo apt update && sudo apt install -y code
 
-# Install ZSH and plugins 
+# Install OHMYZSH and plugins 
 cd ../
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions
@@ -41,6 +41,7 @@ cp -r zsh-syntax-highlighting/ $HOME/.oh-my-zsh/custom/plugins/
 git clone https://github.com/marlonrichert/zsh-autocomplete.git 
 cp -r zsh-autocomplete/ $HOME/.oh-my-zsh/custom/plugins/
 
+# Install nerd fonts for the i3status bar and terminal
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' | jq -r ".assets[] | .browser_download_url" | grep ttf-iosevka | xargs -n 1 curl -L -O --fail --silent --show-error
 
