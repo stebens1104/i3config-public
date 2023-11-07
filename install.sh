@@ -13,7 +13,6 @@ sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 # Enable the services that were installed
 sudo systemctl enable lightdm
-sudo systemctl enable acpid
 sudo systemctl enable bluetooth
 sudo systemctl enable cups
 
@@ -35,13 +34,15 @@ sudo apt update && sudo apt install -y code
 # Install ZSH and plugins 
 cd ../
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mkdir git && cd git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 cp -r zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
 cp -r zsh-syntax-highlighting/ $HOME/.oh-my-zsh/custom/plugins/
 git clone https://github.com/marlonrichert/zsh-autocomplete.git 
 cp -r zsh-autocomplete/ $HOME/.oh-my-zsh/custom/plugins/
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' | jq -r ".assets[] | .browser_download_url" | grep ttf-iosevka | xargs -n 1 curl -L -O --fail --silent --show-error
 
 sudo apt autoremove -y
 
