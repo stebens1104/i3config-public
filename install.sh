@@ -22,7 +22,7 @@ xdg-user-dirs-update
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt install --fix-broken
+sudo apt install --fix-broken -y
 
 # Install VS Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -33,22 +33,21 @@ sudo apt update && sudo apt install -y code
 
 # Install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
-sudo unzip Iosevka.zip -d /usr/share/fonts
+sudo unzip Iosevka.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-sudo unzip JetBrainsMono.zip -d /usr/share/fonts/ -y
+sudo unzip JetBrainsMono.zip -d /usr/share/fonts/ 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-sudo unzip FiraCode.zip -d /usr/share/fonts -y
+sudo unzip FiraCode.zip -d /usr/share/fonts/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IosevkaTerm.zip
+sudo unzip IosevkaTerm.zip -d /usr/share/fonts/
 
 sudo fc-cache -f -v
 # Install OHMYZSH and plugins 
-cd 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y 
-cd git
-git clone https://github.com/zsh-users/zsh-autosuggestions
+cd $HOME
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+cd git/i3config-public
 cp -r zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
 cp -r zsh-syntax-highlighting/ $HOME/.oh-my-zsh/custom/plugins/
-git clone https://github.com/marlonrichert/zsh-autocomplete.git 
 cp -r zsh-autocomplete/ $HOME/.oh-my-zsh/custom/plugins/
 
 
