@@ -20,6 +20,7 @@ sudo systemctl enable cups
 xdg-user-dirs-update
 
 # Install Google Chrome
+cd $HOME/Downloads/
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt install --fix-broken -y
@@ -32,6 +33,7 @@ rm -f packages.microsoft.gpg
 sudo apt update && sudo apt install -y code
 
 # Install nerd fonts
+cd ../git/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
 sudo unzip Iosevka.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
@@ -45,7 +47,6 @@ sudo unzip IosevkaTerm.zip -d /usr/share/fonts/
 wget https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
 sudo unzip master.zip -d /usr/share/themes/
 
-sudo fc-cache -f -v
 
 
 sudo apt autoremove -y
