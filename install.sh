@@ -42,13 +42,6 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IosevkaTer
 sudo unzip IosevkaTerm.zip -d /usr/share/fonts/
 
 sudo fc-cache -f -v
-# Install OHMYZSH and plugins 
-cd $HOME
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
-cd git/i3config-public
-cp -r zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/
-cp -r zsh-syntax-highlighting/ $HOME/.oh-my-zsh/custom/plugins/
-cp -r zsh-autocomplete/ $HOME/.oh-my-zsh/custom/plugins/
 
 
 sudo apt autoremove -y
