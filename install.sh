@@ -2,11 +2,11 @@
 
 # Installl pacakges needed for the configuration and corresponding .config folders
 
-sudo apt install -y i3-wm xorg xbacklight xbindkeys xvkbd xinput xorg-dev
+sudo apt install -y i3-wm xorg xbacklight xbindkeys xvkbd xinput xorg-dev x11-server-utils
 sudo apt install -y python3-pip gh cups
-sudo apt install -y intel-microcode network-manager-gnome lxappearance thunar xfce4-settings xfce4-power-manager acpi acpid
+sudo apt install -y intel-microcode network-manager-gnome lxappearance thunar xfce4-settings xfce4-power-manager acpi xfce4-terminal
 sudo apt install -y kitty pulseaudio alsa-utils pavucontrol volumeicon-alsa neofetch htop exa bluez blueman 
-sudo apt install -y firefox-esr nitrogen picom 
+sudo apt install -y firefox-esr nitrogen picom arc-theme breeze-cursor-theme
 sudo apt install -y curl wget dmenu rofi dunst libnotify-bin lxpolkit unzip neovim gpg
 sudo apt install -y fonts-font-awesome fonts-powerline fonts-ubuntu-title fonts-liberation2 fonts-liberation fonts-terminus 
 sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
@@ -40,6 +40,10 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.z
 sudo unzip FiraCode.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IosevkaTerm.zip
 sudo unzip IosevkaTerm.zip -d /usr/share/fonts/
+
+#Install nordic theme
+wget https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
+sudo unzip master.zip -d /usr/share/themes/
 
 sudo fc-cache -f -v
 
