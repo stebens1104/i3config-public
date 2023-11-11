@@ -1,5 +1,8 @@
 #! /bin/bash
 
+mkdir -p $HOME/.local/share/fonts
+mkdir -p $HOME/,local/share/themes
+
 # Installl pacakges needed for the configuration and corresponding .config folders
 
 sudo apt install -y i3-wm xorg xbacklight xbindkeys xvkbd xinput xorg-dev x11-server-utils
@@ -33,7 +36,6 @@ rm -f packages.microsoft.gpg
 sudo apt update && sudo apt install -y code
 
 # Install nerd fonts
-cd ../git/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
 sudo unzip Iosevka.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
