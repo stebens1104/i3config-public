@@ -2,6 +2,7 @@
 mkdir -p /home/$USERNAME/.local/share/fonts
 mkdir -p /home/$USERNAME/.local/share/themes
 
+echo"Installing Packages"
 # Installl pacakges needed for the configuration and corresponding .config folders
 
 sudo apt install -y i3-wm xorg xbacklight xbindkeys xvkbd xinput xorg-dev libu2f-udev 
@@ -21,12 +22,13 @@ sudo systemctl enable cups
 #Update home directory
 xdg-user-dirs-update
 
+echo"Installing Google Chrome"
 # Install Google Chrome
 cd /home/$USERNAME/Downloads/
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-
+echo"Installing VS Code"
 # Install VS Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -34,8 +36,9 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packag
 rm -f packages.microsoft.gpg
 sudo apt update && sudo apt install -y code
 
+echo"Installing Nerd Fonts"
 # Install nerd fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.3/Iosevka.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Iosevka.zip
 sudo unzip Iosevka.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
 sudo unzip JetBrainsMono.zip -d /usr/share/fonts/ 
@@ -44,9 +47,14 @@ sudo unzip FiraCode.zip -d /usr/share/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/IosevkaTerm.zip
 sudo unzip IosevkaTerm.zip -d /usr/share/fonts/
 
+echo"Installing Nordic theme"
 #Install nordic theme
 wget https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
 sudo unzip master.zip -d /usr/share/themes/
+
+echo"Install Oh-My-ZSH"
+#Install Oh My ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 
 
